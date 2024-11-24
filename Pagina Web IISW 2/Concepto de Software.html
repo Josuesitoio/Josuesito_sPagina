@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Conceptos de Software</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos base y globales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Hace que el canvas esté detrás del contenido */
+        }
+
+        /* Menú de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(13, 13, 13, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 1000;
+}
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00adb5;
+    cursor: pointer;
+}
+
+nav .logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-links li {
+    margin: 0 20px;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav .nav-links a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #00adb5;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+    color: #00adb5;
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.active::after {
+    width: 100%;
+}
+
+nav .burger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+
+        .quiz-container {
+            width: 90%;
+            max-width: 500px;
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 
+                        0 0 20px rgba(138, 43, 226, 0.5), 
+                        0 0 40px rgba(0, 191, 255, 0.4);
+            text-align: center;
+        }
+
+        .question {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #00adb5;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 15px;
+            background-color: #1e1e1e;
+            color: #fff;
+            border: 2px solid #00adb5;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .option:hover {
+            background-color: rgba(0, 173, 181, 0.5);
+        }
+
+        .correct {
+            background-color: rgba(0, 255, 0, 0.7);
+            animation: correct 0.5s ease-in-out;
+        }
+
+        .incorrect {
+            background-color: rgba(255, 0, 0, 0.7);
+            animation: incorrect 0.5s ease-in-out;
+        }
+
+        @keyframes correct {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes incorrect {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(0.9); }
+        }
+
+        .score {
+            font-size: 1.2rem;
+            color: #00adb5;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Menú de navegación -->
+   <nav>
+    <div class="logo">
+        <a href="https://www.itson.mx" target="_blank" class="logo">
+                <img src="img/itsonLogo.png" alt="Logo ITSON">
+                 </a>  
+                 Ingeniería en Software
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="Unidad1.html">Introducción</a></li>
+        <li><a href="Unidad2.html">Ciclo de Vida</a></li>
+        <li><a href="Unidad3.html">Corrientes y Modelos de Desarrollo</a></li>
+        <li><a href="VideoJuegos.html">Videojuegos</a></li>
+    </ul>
+    <div class="burger">
+        <i class="fas fa-bars"></i>
+    </div>
+</nav>
+
+<canvas id="backgroundCanvas"></canvas>
+
+<div class="quiz-container">
+    <h2 class="question">Pregunta aquí</h2>
+    <div class="options">
+        <div class="option">Opción 1</div>
+        <div class="option">Opción 2</div>
+        <div class="option">Opción 3</div>
+        <div class="option">Opción 4</div>
+    </div>
+    <div class="score">Puntaje: <span id="score">0</span></div>
+</div>
+
+<script>
+    const questions = [
+        {
+            question: "¿Qué es el desarrollo ágil?",
+            options: [
+                "Un método para trabajar de forma rápida",
+                "Un modelo de ciclo de vida en cascada",
+                "Un enfoque iterativo para el desarrollo de software",
+                "Una herramienta de seguimiento de proyectos"
+            ],
+            answer: 2
+        },
+        {
+            question: "¿Cuál es el objetivo de un sistema de control de versiones?",
+            options: [
+                "Facilitar el trabajo colaborativo",
+                "Proteger el software de malware",
+                "Aumentar la seguridad de los datos",
+                "Mejorar la velocidad del software"
+            ],
+            answer: 0
+        },
+        {
+            question: "¿Qué es una API en desarrollo de software?",
+            options: [
+                "Un tipo de base de datos",
+                "Un conjunto de reglas para interactuar con un sistema",
+                "Una interfaz gráfica de usuario",
+                "Un lenguaje de programación"
+            ],
+            answer: 1
+        },
+        {
+            question: "¿Cuál de estos es un lenguaje de programación orientado a objetos?",
+            options: [
+                "HTML",
+                "SQL",
+                "Java",
+                "CSS"
+            ],
+            answer: 2
+        },
+        // Agrega más preguntas según sea necesario
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionElement = document.querySelector('.question');
+    const optionsElement = document.querySelector('.options');
+    const scoreElement = document.getElementById('score');
+
+    function showQuestion() {
+        const question = questions[currentQuestion];
+        questionElement.textContent = question.question;
+        optionsElement.innerHTML = "";
+
+        question.options.forEach((option, index) => {
+            const optionElement = document.createElement('div');
+            optionElement.classList.add('option');
+            optionElement.textContent = option;
+            optionElement.addEventListener('click', () => selectAnswer(index));
+            optionsElement.appendChild(optionElement);
+        });
+    }
+
+    function selectAnswer(index) {
+        const question = questions[currentQuestion];
+        const selectedOption = optionsElement.children[index];
+
+        if (index === question.answer) {
+            selectedOption.classList.add('correct');
+            score++;
+        } else {
+            selectedOption.classList.add('incorrect');
+            optionsElement.children[question.answer].classList.add('correct');
+        }
+
+        scoreElement.textContent = score;
+
+        setTimeout(() => {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }, 1000);
+    }
+
+    function showResults() {
+        questionElement.textContent = `Quiz terminado. Tu puntaje final es ${score} de ${questions.length}.`;
+        optionsElement.innerHTML = "";
+    }
+
+    showQuestion();
+
+    // Fondo animado personalizado (partículas conectadas)
+    const canvas = document.getElementById('backgroundCanvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    let particlesArray;
+
+    // Manejar el cambio de tamaño de la ventana
+    window.addEventListener('resize', function() {
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+        init();
+    });
+
+    // Crear clase de Partícula
+    class Particle {
+        constructor(x, y, directionX, directionY, size, color) {
+            this.x = x;
+            this.y = y;
+            this.directionX = directionX;
+            this.directionY = directionY;
+            this.size = size;
+            this.color = color;
+        }
+
+        // Método para dibujar la partícula
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = '#00adb5';
+            ctx.fill();
+        }
+
+        // Método para actualizar la posición de la partícula
+        update() {
+            // Rebotar en los bordes
+            if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                this.directionX = -this.directionX;
+            }
+            if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                this.directionY = -this.directionY;
+            }
+
+            // Mover la partícula
+            this.x += this.directionX;
+            this.y += this.directionY;
+
+            // Dibujar la partícula
+            this.draw();
+        }
+    }
+
+    // Crear arreglo de partículas
+    function init() {
+        particlesArray = [];
+        let numberOfParticles = (canvas.height * canvas.width) / 9000;
+        for (let i = 0; i < numberOfParticles * 2; i++) {
+            let size = (Math.random() * 3) + 1;
+            let x = (Math.random() * (innerWidth - size * 2)) + size * 2;
+            let y = (Math.random() * (innerHeight - size * 2)) + size * 2;
+            let directionX = (Math.random() * 1) - 0.5;
+            let directionY = (Math.random() * 1) - 0.5;
+            let color = '#00adb5';
+
+            particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+        }
+    }
+
+    // Conectar las partículas
+    function connect() {
+        let opacityValue = 1;
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                    + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                    opacityValue = 1 - (distance / 20000);
+                    ctx.strokeStyle = 'rgba(0, 173, 181,' + opacityValue + ')';
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    // Animar las partículas
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+        }
+        connect();
+    }
+
+    init();
+    animate();
+</script>
+
+</body>
+</html>

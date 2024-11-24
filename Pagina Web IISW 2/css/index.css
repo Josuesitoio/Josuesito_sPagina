@@ -1,0 +1,422 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+canvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Menú de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(13, 13, 13, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 1000;
+}
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00adb5;
+    cursor: pointer;
+}
+
+nav .logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-links li {
+    margin: 0 20px;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav .nav-links a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #00adb5;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+    color: #00adb5;
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.active::after {
+    width: 100%;
+}
+
+nav .burger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Sección Hero */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 5px solid rgba(0, 173, 181, 0.5);
+    box-shadow: 0 10px 15px rgba(0, 173, 181, 0.4);
+}
+
+.hero-content {
+    z-index: 2;
+    animation: fadeInDown 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px rgba(0, 173, 181, 0.7);
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: transparent;
+    border: 2px solid #00adb5;
+    color: #00adb5;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.hero .btn:hover {
+    background: #00adb5;
+    color: #0d0d0d;
+}
+
+/* Sección de presentación */
+.presentacion {
+    padding: 100px 50px;
+    background-color: #121212;
+    z-index: 2;
+    position: relative;
+    animation: fadeInUp 1.5s ease-in-out;
+    margin-top: -5vh;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+.presentacion .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.presentacion h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #00adb5;
+    animation: pulse 1.5s infinite;
+}
+
+.presentacion p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.presentacion ul {
+    list-style: none;
+    padding: 0;
+}
+
+.presentacion ul li {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.presentacion ul li:hover {
+    transform: scale(1.05);
+}
+
+.presentacion ul li i {
+    color: #00adb5;
+}
+.presentacion::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Ajusta la posición para que quede más cerca del título */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Ajusta el ancho para que no cubra toda la sección */
+    height: 5px; /* Hace la línea más delgada */
+    background: linear-gradient(90deg, rgba(0, 173, 255, 0.9), rgba(0, 173, 255, 0.2), rgba(0, 102, 204, 0.9));
+    box-shadow: 0px 0px 15px rgba(0, 173, 255, 0.8), 0px 0px 30px rgba(0, 173, 255, 0.5); /* Sombra luminosa */
+    border-radius: 5px; /* Bordes redondeados para un estilo pulido */
+    z-index: -1;
+    animation: pulseGlow 3s infinite alternate; /* Efecto de pulso para darle un resplandor */
+}
+
+@keyframes pulseGlow {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.7;
+        box-shadow: 0px 0px 20px rgba(0, 173, 255, 1), 0px 0px 40px rgba(0, 173, 255, 0.6);
+    }
+}
+
+
+/* Galería */
+.galeria {
+    padding: 50px;
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.galeria img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    opacity: 0.8;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 173, 181, 0.7);
+    opacity: 1;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    nav .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 70px;
+        background: #0d0d0d;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    nav .nav-links li {
+        margin: 20px 0;
+    }
+
+    nav .burger {
+        display: block;
+    }
+
+    nav .nav-active {
+        transform: translateX(0%);
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .presentacion h2 {
+        font-size: 2.5rem;
+    }
+    .presentacion p, .presentacion ul li {
+        font-size: 1rem;
+    }
+
+    .galeria img {
+        width: 90%;
+    }
+    @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+}
+
+/* Galería */
+.galeria {
+    padding: 50px;
+    background-color: #0d0d0d;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 2.5rem;
+    color: #00adb5;
+    margin-bottom: 30px;
+}
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    height: 300px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 173, 181, 0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 173, 181, 0.8);
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+.download-icon {
+    margin-left: 10px;
+    color: #00adb5;
+    font-size: 1.5rem; /* Aumenta el tamaño del icono */
+    transition: color 0.3s;
+    vertical-align: middle; /* Alinea el icono verticalmente con el texto */
+}
+
+.download-icon:hover {
+    color: #fff;
+}

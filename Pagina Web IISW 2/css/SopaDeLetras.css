@@ -1,0 +1,296 @@
+        /* Estilos generales */
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0d0d0d;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #00adb5;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Menú de navegación */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(13, 13, 13, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00adb5;
+            cursor: pointer;
+        }
+
+        nav .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav-links li {
+            margin: 0 20px;
+        }
+
+        nav .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #00adb5;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+
+        nav .nav-links a:hover,
+        nav .nav-links a.active {
+            color: #00adb5;
+        }
+
+        nav .nav-links a:hover::after,
+        nav .nav-links a.active::after {
+            width: 100%;
+        }
+
+        nav .burger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        /* Estilo mejorado para .cuadrito */
+        .cuadrito {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+            backdrop-filter: blur(15px) saturate(150%);
+            -webkit-backdrop-filter: blur(15px) saturate(150%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 900px;
+            margin: 100px auto 20px; /* Ajuste de margen para evitar el menú */
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            z-index: 2; /* Para estar sobre el canvas */
+        }
+
+        .cuadrito::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+
+        /* Contenedor del juego */
+        .game-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Estilos de la sopa de letras */
+        .word-search {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .word-search div {
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1px solid #2a2a2a;
+            transition: background-color 0.3s, border 0.3s;
+        }
+
+        .word-search .selected {
+            background-color: #00adb5;
+            border-color: #00adb5;
+        }
+
+        .word-search .discovered {
+            background-color: #00ff00; /* Color verde para indicar palabra encontrada */
+            color: #fff;
+        }
+
+        /* Estilos de las palabras a encontrar */
+        .word-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 20px;
+        }
+
+        .word-list h2 {
+            color: #00adb5;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .word {
+            font-size: 1.2rem;
+            margin: 5px 0;
+            color: #fff;
+        }
+
+        .found {
+            color: #00ff00;
+            text-decoration: line-through;
+        }
+
+        /* Responsividad */
+        @media screen and (max-width: 768px) {
+            .cuadrito {
+                flex-direction: column;
+                padding: 15px;
+                width: 95%;
+                max-width: 100%;
+                max-height: 90vh;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .word {
+                font-size: 0.9rem;
+            }
+
+            .word-search {
+                grid-template-columns: repeat(10, 30px);
+            }
+
+            .word-search div {
+                width: 30px;
+                height: 30px;
+            }
+
+            .game-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(13, 13, 13, 0.95);
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+            }
+
+            nav .nav-links.nav-active {
+                display: flex;
+            }
+
+            nav .burger {
+                display: block;
+            }
+        }
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            10% { transform: translate(-2px, 0); }
+            20% { transform: translate(2px, 0); }
+            30% { transform: translate(-2px, 0); }
+            40% { transform: translate(2px, 0); }
+            50% { transform: translate(-2px, 0); }
+            60% { transform: translate(2px, 0); }
+            70% { transform: translate(-2px, 0); }
+            80% { transform: translate(2px, 0); }
+            90% { transform: translate(-2px, 0); }
+            100% { transform: translate(0, 0); }
+        }
+
+        /* Estilos para el mensaje de victoria */
+        .win-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            color: #fff;
+            z-index: 1000;
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        .win-message h2 {
+            font-size: 3em;
+            animation: fadeIn 2s;
+        }
+
+        .win-message p {
+            font-size: 1.5em;
+            animation: fadeIn 3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .shake {
+            animation: shake 0.5s;
+                }

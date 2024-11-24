@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Introducción - Ingeniería en Software</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlaces a hojas de estilo y fuentes -->
+    <link rel="stylesheet" href="css/unidad1.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav>
+        <div class="logo">
+            <a href="https://www.itson.mx" target="_blank" class="logo">
+                <img src="img/itsonLogo.png" alt="Logo ITSON">
+            </a>  
+            Ingeniería en Software
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" >Inicio</a></li>
+            <li><a href="Unidad1.html" class="active">Introducción</a></li>
+            <li><a href="Unidad2.html">Ciclo de Vida</a></li>
+            <li><a href="Unidad3.html">Corrientes y Modelos de Desarrollo</a></li>
+            <li><a href="VideoJuegos.html">Videojuegos</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Sección de contenido principal -->
+    <main>
+        <!-- Hero con fondo animado -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Introducción</h1>
+                <p>Proyecto de Ingeniería de Software</p>
+            </div>
+            <canvas id="backgroundCanvas"></canvas>
+        </section>
+
+        <!-- Sección de contenido con tarjetas -->
+        <section class="content">
+            <div class="interactive-section">
+                <h2>Explora los Conceptos Clave</h2>
+                <div class="card-container">
+                    <!-- Tarjetas con modales -->
+                     <!-- Concepto de Ingenieria en Software  -->
+                    <div class="card" data-content="concepto">
+                        <div class="card-front">
+                            <h3>Concepto de Ingeniería de Software</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>La ingeniería de software es una disciplina...</p>
+                            <button class="btn-more" data-modal="conceptoModal">Leer más</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="disciplina">
+                        <div class="card-front">
+                            <h3>Disciplina en el Campo de la Computación</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Aplica principios y técnicas de la informática...</p>
+                            <button class="btn-more" data-modal="disciplinaModal">Leer más</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="tendencias">
+                        <div class="card-front">
+                            <h3>Tendencias Actuales</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Descubre las tendencias más relevantes...</p>
+                            <button class="btn-more" data-modal="tendenciasModal">Explorar</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="clasificacion">
+                        <div class="card-front">
+                            <h3>Tipos de Software</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>El software tiene una clasificación...</p>
+                            <button class="btn-more" data-modal="clasificacionModal">Leer más</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="sistemasDeInformacion">
+                        <div class="card-front">
+                            <h3>Sistemas de Información</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Los sistemas de información cumplen una función...</p>
+                            <button class="btn-more" data-modal="sistemasDeInformacionModal">Leer más</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="compromisosEticos">
+                        <div class="card-front">
+                            <h3>Compromisos Éticos en el Desarrollo de Software</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Descubre los compromisos éticos...</p>
+                            <button class="btn-more" data-modal="compromisosEticosModal">Leer más</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="glosario">
+                        <div class="card-front">
+                            <h3>Glosario de Ingeniería en Software</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Descubre el significado de las palabras...</p>
+                            <button class="btn-more" data-modal="glosarioModal">Leer más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales -->
+    <!-- conceptoModal -->
+    <div id="conceptoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <!-- Contenido del modal -->
+            <h2>Concepto de Ingeniería en Software</h2>
+            <p>La ingeniería en software es una rama de la ingeniería que engloba diferentes áreas dentro de sí mismo. Para comprender mejor su significado, a continuación se mostrarán varios conceptos de diferentes autores para que puedas construir tu idea personal.</p>
+            <p>Bohem (1976) la describe como: “Ingeniería del Software es la aplicación práctica del conocimiento científico en el diseño y construcción de programas de computadora y la documentación asociada requerida para desarrollar, operar (funcionar) y mantenerlos. Se conoce también como desarrollo de software o producción de software.”.</p>
+            <p>Por otro lado, Fritz Bauer (1972) dijo que: “Ingeniería del software trata del establecimiento de los principios y métodos de la ingeniería a fin de obtener software de modo rentable que sea fiable y trabaje en máquinas reales.”</p>
+            <p>Otro concepto muy mencionado es el de IEEE(1993) (Instituto de Ingenieros Eléctricos y Electrónico) se define este concepto como: “Ingeniería de software es la aplicación de un método sistemático, estructurado y cuantificable al desarrollo, operación y mantenimiento de software, es decir la aplicación de la ingeniería al software.”</p>
+            <p>Por último, repasaron la definición que Ian Sommerville (2001) escribió su libro “Software Engineering”: “Es una disciplina que comprende todos los aspectos de la producción de software desde las etapas iniciales de la especificación del sistema, hasta el mantenimiento de éste después de que se utiliza.”</p>   
+        </div>
+    </div>
+
+<!--SISTEMAS DE INFORMACIÓN INFO-->
+<div id="sistemasDeInformacionModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Sistemas de Información</h2>
+        <p>El Libro del que nos basaremos para la información presentada en esta sección es <i>Sistemas de información para los negocios</i> del autor Daniel Cohen (2000). Para más información, puedes consultarlo tú mismo.</p>
+        <p>Primero que nada, ¿Qué es un sistema de información? En el primer capítulo la definición dice: “Un sistema de información es un conjunto de elementos que interactúan entre sí con el fin de apoyar las actividades de una empresa o negocio.” </p>
+        <h3>Función de los Sistemas de Información</h3>
+        <p>Los sistemas de información, como dice su definición en el libro, tienen como fin apoyar las actividades de una empresa o negocio. Sus objetivos básicos son los siguientes:</p>
+        <ul>
+            <li>Automatizar los procesos operativos. También llamados sistemas transaccionales, ya que su función primordial consiste en procesar transacciones, tales como pagos, cobros, pólizas, entradas, salidas, etcétera.</li>
+            <li>Proporcionar información que sirve de apoyo en el proceso de toma de decisiones. Su función es manipular la información con el fin de apoyar y fundamentar la toma de decisiones.</li>
+            <li>Lograr ventajas competitivas a través de su implantación y uso.</li>
+        </ul>
+
+        <h3>Tipos de Decisiones</h3>
+        <p>Los sistemas enfocados a la mejora de la toma de decisiones, se dividen en dos grupos, dependiendo a la función que realizan:</p>
+        <ul>
+            <li>Los que realizan un  análisis de la situación. En esta categoría están los sistemas de apoyo a las decisiones (DSS), sistemas para la toma de decisiones en grupo  (GDSS) y sistemas de información para ejecutivos (EIS)</li>
+            <li>Los que, además de hacer el análisis, hacen una recomendación sobre la decisión a tomar. Aquí entran las tecnologías con inteligencia artificial, como los sistemas expertos de apoyo a la toma de decisiones (EDSS) y herramientas de redes neuronales. Encuentran los patrones de un proceso o conjunto de datos y de ahí generan recomendaciones.</li>
+        </ul>
+
+        <h3>Usuarios de la Información</h3>
+        <p>El usuario de la información es aquel que produce y consume la información (SciELO, 2012). Según el campo al que nos estemos refiriendo, los usuarios se clasifican de diferente manera:</p>
+        <p>En la informática, generalmente se dividen en tres niveles: </p>
+
+        <ul>
+            <li><b>Usuario básico: </b>Gestiona documentos mediante hojas de cálculo y procesadores de texto, navega por internet, se comunica con clientes por correo electrónico y organiza fotos tomadas con su cámara o móvil en su ordenador. (simple, s.f.)</li>
+            <li><b>Usuario Intermedio: </b>Realiza funciones administrativas, pero además trabaja con archivos de audio, video e imágenes de tamaño moderado, generalmente en tareas técnicas o profesionales que requieren el uso frecuente de estos recursos. (simple, s.f.)</li>
+            <li>¿<b>Usuario avanzado: </b> Se dedica al procesamiento de imágenes y videos, como diseñadores, arquitectos, fotógrafos o editores de video, y suelen interesarse también en actividades de gaming. (simple, s.f.)</li>
+        </ul>
+
+
+        <h3> base de datos, se pueden clasificar como:</h3>
+        <ul>
+            <li><b>Administrador de base de datos: </b>Es responsable de comprender y gestionar el entorno completo de la base de datos, desarrollando e implementando un plan estratégico para su uso dentro de la organización. (Computer Weekly, s.f.)</li>
+            <li><b>Usuario final: </b>Se refiere a las personas para quienes están destinados tus productos o servicios; suelen ser tus clientes, es decir, quienes adquieren tus productos. (Mailchimp, s.f.)</li>
+            <li><b>Analista de sistemas: </b>Diseña y optimiza estructuras informáticas o sistemas específicos, utilizando herramientas como programas, lenguajes de programación y bases de datos. (Indeed, 2024)</li>
+        </ul>   
+
+        <p>Estos datos, varían según el área a la que te quieras referir. Si deseas profundizar, a continuación te compartimos las fuentes utilizadas para que puedas explorar más información sobre estos temas.</p>
+
+        <ul>Fuentes:
+            <li><a class="reference" href="https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0187-358X2012000100001">La investigación acerca del usuario de la información</a> | </li>
+            <li><a class="reference" href="https://www.simpleinformatica.es/159-programa-159-tres-tipos-usuario-ordenador/">159 Programa 159. Tres tipos de usuario para ordenador. ¿Cuál eres tú? - Simple informatica</a> | </li>
+            <li><a class="reference" href="https://www.computerweekly.com/es/definicion/Administrador-de-base-de-datos-o-DBA"> ¿Qué es Administrador de base de datos o DBA? - Definición en Computer Weekly</a> | </li>
+            <li><a class="reference" href="https://mailchimp.com/es/marketing-glossary/end-user/"> ¿Qué es un usuario final? | Mailchimp</a> | </li>
+            <li><a class="reference" href="https://mx.indeed.com/orientacion-profesional/como-encontrar-empleo/que-hace-analista-sistemas"> Qué hace un analista de sistemas | Indeed.com México </a> | </li>
+        </ul>
+    </div>
+</div>
+
+    <!-- disciplinaModal -->
+    <div id="disciplinaModal" class="modal">
+        <div class="modal-content"> 
+                <span class="close-btn">&times;</span>
+                <h2>La Ingeniería de Software: Un Pilar Fundamental en la Computación Moderna</h2>
+                
+                <p>Anteriormente, se mostraron diferentes definiciones para el concepto de “Ingeniería en Software”. Ahora, con intención de entender más está disciplina, profundizaremos en como funciona dentro del campo de la computación y su diferencia con otras áreas de la misma.</p>
+                <p>Primero que nada, hay que aclarar que la computación y la ingeniería o desarrollo en software, no son lo mismo, aunque estén fuertenemente relacionadas.</p>
+                <p>Mientras que la ingeniería en software se encarga del diseño y desarrollo de sistemas de software, la creación de algoritmos y estructura de datos, así como la optimización y escalabilidad del sistema. (Velneo, 2022)</p>
+                <p>La computación, por otro lado, se refiere al uso de computadores para realizar cálculos y procesos. Implica utilizar tanto hardware como software, para procesar información y resolver problemas (SISE, 2023)</p>
+                <h3>La Evolución de la Ingeniería de Software</h3>
+                <p>Los orígenes de la ingeniería de software se remontan a la década de 1960, cuando la creciente complejidad de los sistemas de software comenzó a generar problemas de calidad, productividad y costos. La "crisis del software" de esa época impulsó la necesidad de establecer métodos y técnicas sistemáticas para el desarrollo de software.</p>
+                <p>A lo largo de los años, la ingeniería de software ha evolucionado significativamente, dando lugar a una amplia variedad de metodologías, modelos y herramientas. Desde los modelos tradicionales en cascada hasta los enfoques ágiles más modernos, la disciplina se ha adaptado a las cambiantes necesidades de la industria y a los avances tecnológicos.</p>
+                
+                <ul>
+                    <li>
+                        <h3>Fundamentos de la Ingeniería de Software</h3>
+                            <ul>
+                                <li><strong>Ingeniería:</strong> Aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento de software.</li>
+                                <li><strong>Software:</strong> Producto intangible que consiste en instrucciones ejecutables, datos asociados y documentación que especifican su funcionamiento.</li>
+                                <li><strong>Proceso:</strong> Conjunto de actividades que transforman los requisitos del usuario en un producto de software.</li>
+                                <li><strong>Método:</strong> Procedimiento sistemático para llevar a cabo una actividad.</li>
+                                <li><strong>Herramienta:</strong> Instrumento automatizado que ayuda a realizar una actividad.</li>
+                            </ul>
+                    </li>
+                </ul>
+                <div class="gallery-item">
+                    <img src="img/imagenUnidad1.jpg" alt="Imagen ITSON 6">
+                    <div class="gallery-caption">ITSON</div>
+                </div>
+                <h3>Áreas Clave de la Ingeniería de Software</h3>
+                <ul>
+                    <li><strong>Requisitos de software:</strong> Proceso de definir y documentar las características y restricciones de un sistema de software.</li>
+                    <li><strong>Diseño de software:</strong> Creación de una representación estructural de un sistema de software.</li>
+                    <li><strong>Construcción de software:</strong> Codificación, pruebas unitarias e integración de componentes de software.</li>
+                    <li><strong>Pruebas de software:</strong> Proceso de verificar y validar que el software cumpla con los requisitos.</li>
+                    <li><strong>Mantenimiento de software:</strong> Modificación de un sistema de software después de su entrega para corregir errores, mejorar el rendimiento o añadir nuevas funcionalidades.</li>
+                    <li><strong>Gestión de proyectos de software:</strong> Planificación, organización y control de los recursos y actividades involucradas en un proyecto de desarrollo de software.</li>
+                </ul>
+                <div class="gallery-item">
+                    <img src="img/imagenUnidad1.jpg" alt="Imagen ITSON 6">
+                    <div class="gallery-caption">ITSON</div>
+                </div>
+                <h3>Modelos de Desarrollo de Software</h3>
+                <ul>
+                    <li><strong>Modelo en cascada:</strong> Un enfoque secuencial y lineal que divide el proceso de desarrollo en fases distintas.</li>
+                    <li><strong>Modelos iterativos e incrementales:</strong> Permiten desarrollar el software en incrementos, con retroalimentación del usuario en cada iteración.</li>
+                    <li><strong>Desarrollo ágil:</strong> Un enfoque iterativo e incremental que enfatiza la flexibilidad, la colaboración y la entrega rápida de valor.</li>
+                </ul>
+                <div class="gallery-item">
+                    <img src="img/imagenUnidad1.jpg" alt="Imagen ITSON 6">
+                    <div class="gallery-caption">ITSON</div>
+                </div>
+                
+                <h3>Importancia de la Ingeniería de Software</h3>
+                <p>La ingeniería de software es fundamental para el desarrollo de sistemas de software de alta calidad y confiabilidad. Al seguir principios y prácticas de ingeniería de software, las organizaciones pueden:</p>
+                <ul>
+                    <li>Reducir costos: Al mejorar la productividad y evitar errores costosos.</li>
+                    <li>Mejorar la calidad del software: Al garantizar que el software cumpla con los requisitos y sea confiable.</li>
+                    <li>Aumentar la productividad: Al utilizar herramientas y métodos eficientes.</li>
+                    <li>Facilitar el mantenimiento: Al crear software bien documentado y fácil de entender.</li>
+                </ul>
+                <div class="gallery-item">
+                    <img src="img/imagenUnidad1.jpg" alt="Imagen ITSON 6">
+                    <div class="gallery-caption">ITSON</div>
+                </div>
+                
+                <h3>Referencias</h3>
+                <p>Pressman, R. S. (2010). <em>Ingeniería del software: un enfoque práctico</em>. McGraw-Hill.</p>
+                <p>Sommerville, I. (2016). <em>Ingeniería de software</em>. Pearson Educación.</p>
+                <p>IEEE Computer Society. (2004). <em>IEEE Standard for a Standard Glossary of Software Engineering Terminology</em>. IEEE Std 610.12-2004.</p>
+                
+                <div class="gallery-item">
+                    <img src="img/ImagenUnidad2.jpg" alt="Imagen ITSON 6">
+                    <div class="gallery-caption">ITSON</div>
+                </div>
+            </div> 
+        </div>
+    <!-- Cierre correcto del modal disciplinaModal -->
+
+    <div id="tendenciasModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Tendencias</h2>
+            <p>Las tendencias son patrones o cambios en gustos, comportamientos, tecnologías o prácticas que marcan la dirección hacia la que se mueve una sociedad o industria. Reflejan lo que es popular o relevante en un momento determinado y suelen influir en áreas como la moda, tecnología, cultura, economía y estilo de vida. Algunas tendencias son pasajeras, mientras que otras logran establecer cambios permanentes, dependiendo de su impacto y aceptación general.</p>
+            
+            <ul>
+                <li> 
+                    <h2>Las Tendencias actuales más relevantes en el Desarrollo de Software</h2>
+                    <p>La disciplina de la Ingeniería de Software está en constante evolución, impulsada por los avances tecnológicos y las crecientes demandas del mercado. A medida que emergen nuevas tecnologías y metodologías, la forma en que desarrollamos, gestionamos y optimizamos el software sigue transformándose. Entre las tendencias más destacadas, están aquellas que redefinen procesos de desarrollo, mejoran la colaboración entre equipos y abren nuevas posibilidades en cuanto a escalabilidad, seguridad y eficiencia.</p>
+                    
+                    <ul>
+                        <li><b>Desarrollo Ágil:</b> Métodos como Scrum y Kanban continúan ganando popularidad, fomentando la adaptabilidad y colaboración constante en los equipos de trabajo.</li>
+                        <li><b>DevOps:</b> La integración de desarrollo y operaciones facilita la entrega de software, incrementando la eficiencia y calidad mediante la automatización y colaboración entre equipos.</li>
+                        <li><b>Inteligencia Artificial y Aprendizaje Automático:</b> La IA se aplica en diversas áreas del desarrollo, desde la detección de errores y análisis de código hasta la personalización de la experiencia de usuario.</li>
+                        <li><b>Microservicios:</b> Esta arquitectura permite crear aplicaciones modulares y escalables, facilitando la implementación y mantenimiento de sistemas complejos.</li>
+                        <li><b>Cloud Computing:</b> La adopción de servicios en la nube permite mayor agilidad, escalabilidad y accesibilidad en el desarrollo, almacenamiento y despliegue de aplicaciones.</li>
+                        <li><b>Ciberseguridad:</b> La seguridad es una prioridad, integrándose en el ciclo de vida del software (DevSecOps) para proteger datos y sistemas frente a amenazas.</li>
+                        <li><b>Low-Code y No-Code:</b> Estas plataformas permiten a desarrolladores y usuarios sin experiencia en programación crear aplicaciones de forma rápida y eficiente.</li>
+                        <li><b>Metodologías de Desarrollo Sostenible:</b> La sostenibilidad está cobrando importancia, considerando el impacto ambiental de la tecnología y el software.</li>
+                        <li><b>Programación Cuántica:</b> Aunque en fase inicial, la computación cuántica genera interés, especialmente en campos como criptografía y simulaciones complejas.</li>
+                        <li><b>Automatización de Pruebas:</b> La automatización se convierte en estándar para garantizar la calidad del software, facilitando la detección de errores y optimización del rendimiento.</li>
+                    </ul>
+                </li>
+            </ul>
+    
+            <p class="reference">Fuentes: 
+                <a href="https://discoverthenew.ituser.es/it-trends/2024/05/principales-tendencias-tecnologicas-en-ingenieria-de-software-para-2024">Principales tendencias tecnológicas en ingeniería de software para 2024</a> | 
+                <a href="https://discoverthenew.ituser.es/it-trends/2024/05/principales-tendencias-tecnologicas-en-ingenieria-de-software-para-2024">IT Trends | Discover The New</a> | 
+                <a href="https://www.velneo.com/blog/tendencias-de-desarrollo-de-software">12 tendencias de desarrollo de software en 2024</a> 
+            </p>     
+        </div>
+    </div>
+
+    <!-- Resto de los modales -->
+    <div id="clasificacionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Clasificación de Software</h3>
+            <p>Para entender mejor cómo se organiza y clasifica el software, es fundamental conocer las tres principales categorías en las que se divide:</p>
+            
+            <ul>
+                <li> 
+                    <h3>Sistema o Base:</h3> 
+                    <p>El software de sistema gestiona los recursos de hardware de la computadora y sirve como base para que otros programas puedan ejecutarse. Las principales subcategorías incluyen:</p>
+                    <ul>
+                        <li><strong>    Sistemas Operativos:</strong> Proveen el entorno necesario para la ejecución de aplicaciones. Ejemplos:
+                            <ul>
+                                <li>        Windows</li>
+                                <li>        macOS</li>
+                                <li>        Linux</li>
+                                <li>        iOS</li>
+                                <li>        Android</li>
+                            </ul>
+                        </li>
+                        <li><strong>    Controladores (Drivers):</strong> Permiten la comunicación entre el sistema operativo y los componentes de hardware. Ejemplos:
+                            <ul>
+                                <li>        Controladores de audio (Realtek HD Audio)</li>
+                                <li>        Controladores de gráficos (NVIDIA, AMD)</li>
+                                <li>        Controladores de red (Intel, Broadcom)</li>
+                            </ul>
+                        </li>
+                        <li><strong>    Administración del Sistema:</strong> Herramientas para gestionar los recursos del sistema. Ejemplos:
+                            <ul>
+                                <li>        Administrador de Tareas (Windows Task Manager)</li>
+                                <li>        Monitor de Actividad (macOS)</li>
+                                <li>        Gestor de procesos (top en Linux)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+    
+                <li> 
+                    <h3>Aplicación:</h3> 
+                    <p>Software desarrollado para realizar tareas específicas o resolver problemas del usuario. Se clasifica en varias categorías:</p>
+                    <ul>
+                        <li><strong>    Procesadores de Texto:</strong> Permiten crear, editar y dar formato a documentos. Ejemplos:
+                            <ul>
+                                <li>        Microsoft Word</li>
+                                <li>        Google Docs</li>
+                                <li>        LibreOffice Writer</li>
+                            </ul>
+                        </li>
+                        <li><strong>    Sistemas de Información:</strong> Gestionan datos para facilitar la toma de decisiones en organizaciones. Ejemplos:
+                            <ul>
+                                <li>        SAP</li>
+                                <li>        Oracle ERP</li>
+                                <li>        Microsoft Dynamics</li>
+                            </ul>
+                        </li>
+                        <li><strong>    Navegadores Web:</strong> Facilitan el acceso a páginas web e interacción con internet. Ejemplos:
+                            <ul>
+                                <li>        Google Chrome</li>
+                                <li>        Mozilla Firefox</li>
+                                <li>        Microsoft Edge</li>
+                                <li>        Safari</li>
+                            </ul>
+                        </li>
+                        <li><strong>    Hojas de Cálculo:</strong> Herramientas para organizar, analizar y manipular datos en tablas. Ejemplos:
+                            <ul>
+                                <li>        Microsoft Excel</li>
+                                <li>        Google Sheets</li>
+                                <li>        LibreOffice Calc</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+    
+                <li> 
+                    <h3>Desarrollo:</h3> 
+                    <p>Software y herramientas para crear, probar y mantener otros programas. Se divide en:</p>
+                    <ul>
+                        <li><strong>    Lenguajes de Programación:</strong> Permiten escribir instrucciones para desarrollar software. Ejemplos:
+                            <ul>
+                                <li>        Python</li>
+                                <li>        Java</li>
+                                <li>        C++</li>
+                                <li>        JavaScript</li>
+                            </ul>
+                        </li>
+                        <li><strong>    Editores de Texto:</strong> Herramientas para escribir y editar código. Ejemplos:
+                            <ul>
+                                <li>    Visual Studio Code</li>
+                                <li>    Sublime Text</li>
+                                <li>    Atom</li>
+                                <li>    Notepad++</li>
+                            </ul>
+                        </li>
+                        <li><strong>    Compiladores:</strong> Convierte el código fuente en un lenguaje que el computador entiende. Ejemplos:
+                            <ul>
+                                <li>    GCC (GNU Compiler Collection)</li>
+                                <li>    JDK (Java Development Kit)</li>
+                                <li>    MSVC (Microsoft Visual C++)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>  
+    
+            <h2>Referencias:</h2>
+                <a class="reference" href="https://www.clasificacionde.org/clasificacion-de-software/">Clasificación de Software</a>
+        </div>
+    </div>
+    
+    
+    <div id="compromisosEticosModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+          <h2>Compromisos éticos en el Desarrollo de Software</h2>
+
+            <p>En el sitio web de HouseOf (2023), se recopilaron las principales éticas en la disciplina de desarrollo en Software. Aquí te explicaremos uno a uno cada punto. </p>
+            <ul>
+                <li><b>Privacidad y Seguridad: </b>La privacidad y la seguridad son elementos cruciales en el desarrollo de software. Los desarrolladores deben implementar técnicas de cifrado y limitar la recopilación de datos para proteger la información de los usuarios. También es fundamental que se informen a los usuarios sobre el uso de sus datos y que se identifiquen y solucionen amenazas y vulnerabilidades de seguridad.</li>
+                <li><b>Inclusión y Accesibilidad: </b>El software debe diseñarse para ser accesible a personas con distintas capacidades, como usuarios de lectores de pantalla o personas con limitaciones motrices. Además, la inclusión implica evitar sesgos y discriminación al tener en cuenta la diversidad en género, raza, edad, y ubicación de los usuarios.</li>
+                <li><b>Equidad en Inteligencia Artificial: </b>La creciente adopción de la IA trae consigo el desafío de mitigar el sesgo en los algoritmos. Los desarrolladores deben considerar los riesgos de que los datos de entrenamiento no representen a todos los grupos de usuarios y así evitar decisiones discriminatorias.</li>
+                <li><b>Responsabilidad de los Desarrolladores: </b>Los desarrolladores de software tienen la responsabilidad ética de corregir errores de manera oportuna y considerar el impacto social y ambiental de su trabajo, promoviendo así un desarrollo sostenible y positivo para la sociedad.</li>
+                <li><b>Formación Ética para Desarrolladores: </b>La ética es clave en la educación de los desarrolladores, por lo que se recomienda incluir cursos y talleres específicos en ética en el campo de la informática, ayudando a los desarrolladores a tomar decisiones informadas y responsables en su labor.</li>
+            </ul>
+            
+            <p >Fuentes: 
+                <ul>
+                   <li> <a class="reference"  href="https://houseof.io/blog/la-etica-en-el-desarrollo-de-software/">La ética en el desarrollo de software - Donde las aplicaciones nacen</a></li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <div id="glosarioModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Glosario</h3>
+            <p>Durante este apartado conoceras coneptos clave de la materia</p>
+            <ul>
+            <h3>Ingeniería:</h3>
+              <li>La ingeniería es el arte de aplicar el conociemiento cientifico, matematico y de ciencias naturales, en forma racional y  práctica, utilizando los elementos materiales y energéticos, para solucionar problemas de la vida cotidiana. Permite crear estructuras, máquinas, productos manufacturados, y los perfecciona, usando técnica, arte, ciencia e imaginación. </li>
+              <h2>Referencias:</h2>
+                <a class="reference" href="https://deconceptos.com/ciencias-naturales/ingenieria">Concepto de Ingeniería</a>
+              <li>Es una profesión en la que los conocimientos científicos y empíricos se aplican para la conversión óptima de los materiales y fuerzas de la naturaleza en usos  prácticos para la humanidad, así como, la invención, perfeccionamiento y utilización de la técnica industrial, y a la resolución de problemas técnicos-sociales.</li>
+              <h2>Referencias:</h2>
+              <a class="reference" href="https://conceptodefinicion.de/ingenieria/#google_vignette">Ingeniería</a>
+            </ul>
+            <ul>
+            <h3>Software:</h3>  
+            <li>El software es la parte intangible y la que nos permite interactuar con el hardware para poder utilizar un dispositivo de la forma en que lo hacemos. Es la parte lógica de un sistema y es, en conjunto con el hardware (que es la parte física) lo que nos permite utilizar un dispositivo electrónico determinado.</li>  
+            <h2>Referencias:</h2>
+              <a class="reference" href="https://tecnomagazine.net/que-es-software/">Que es Software</a>
+            <li>Sirve para realizar tareas específicas, como procesar información, gestionar archivos o interactuar con el usuario. También para satisfacer las necesidades de los usuarios, como realizar tareas diarias, mantener el contacto con amigos y familiares, o divertirse y relajarse. Es un término que procede del inglés y se refiere a los programas y sistemas que se ejecurtan en un ordenador o dispositivo electrónico.</li>  
+            <h2>Referencias:</h2>
+              <a class="reference" href="https://ejemplosweb.de/software-definicion-segun-autores-ejemplos/">Concepto de Software</a>
+        </ul>
+            <ul>
+            <h3>Hardware:</h3> 
+            <li>Conjunto de los componentes materiales, tangibles, de un computador o un sistema informático. Incluye todas las partes mecánicas, eléctricas y electrónicas, sin considerar los programas y otros elementos digitales que forman parte del software.</li>
+            <h2>Referencias:</h2>
+              <a class="reference" href="https://concepto.de/hardware/">Concepto de Hardware</a>
+            <li>Se refiere a los componentes físicos de un sistema informático, incluidos los microprocesadores, los módulos de memoria, los dispositivos de entrada/salida (E/S) y el almacenamiento de datos, que en conjunto permiten los procesos informáticos y la transferencia de datos.</li> 
+            <h2>Referencias:</h2>
+              <a class="reference" href="https://softwarelab.org/es/blog/que-es-el-hardware/">Que es el Hardware</a>
+            </ul>
+            <ul>
+            <h3>Dato:</h3> 
+            <li>Es una representación simbólica de un hecho, una figura, una idea o cualquier otra cosa que se pueda medir o cuantificar. En programación, los datos se almacenan en variables, que son contenedores designados para almacenar datos en memoria.</li>
+            <h2>Referencias:</h2>
+              <a class="reference" href="https://programacion.top/conceptos/dato/">Que es un dato</a>
+            <li>Son representaciones simbólicas (vale decir: numéricas, alfabéticas, algorítmicas, etc.) de un determinado atributo o variable cualitativa o cuantitativa, o sea: la descripción codificada de un hecho empírico, un suceso, una entidad.</li> 
+            <h2>Referencias:</h2>
+              <a class="reference" href="https://concepto.de/dato-en-informatica/">Dato en informática</a>    
+        </ul>
+            <ul>
+            <h3>Información:</h3> 
+            <li>La información en programacion es el conjunto de datos organizados y procesados que se utilizan para realizar cálculos, tomar decisiones y almacenar información relevante.</li>
+            <h2>Referencias:</h2>
+            <a class="reference" href="https://elblogpython.com/tecnologia/los-datos-en-la-programacion-fundamentos-y-aplicaciones-practicas/">Los datos en la prog</a>
+            <li>Es un conjunto de datos con un significado, ósea que reduce la incertidumbre o aumenta el conocimiento de algo, en verdad, la información es un mensaje con un significado en un determinado contexto, disponible para uso inmediato y que proporciona orientación a las acciones por el hecho de reducir el margen de incertidumbre con respecto a nuestras decisiones.</li> 
+            <h2>Referencias:</h2>
+              <p>Fuente: Libro <Introduccion a la Teoría General de la Administración>, Séptima Edición, de Chiavenato Idalberto, McGraw-Hill Interamericana, 2006, Pág. 110.</p>
+        </ul>
+            <ul>
+            <h3>Ingeniería en Software:</h3> 
+            <li>La ingeniería en software es una disciplina de la ingeniería que se interesa por todos los aspectos de la producción de software.</li>
+            <h2>Referencias:</h2>
+              <p>Desarrollo de software profesional, ISW – Cap1 – Sommerville</pp>
+            <li>Es una disciplina formada por un conjunto de  métodos, herramientas y técnicas que se utilizan en el desarrollo de  los programas informáticos (software). Esta disciplina trasciende la actividad de programación, que es el pilar fundamental a la hora de crear una aplicación.</li> 
+            <h2>Referencias:</h2>
+              <a class="reference" href="https://definicion.de/ingenieria-de-software/">Ingeniería de Software</a>   
+        </ul>
+
+        </div>
+    </div>->
+    <script src="js/unidad1.js"></script>
+</body>
+</html>

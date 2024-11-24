@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Introducción - Ingeniería en Software</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlaces a hojas de estilo y fuentes -->
+    <link rel="stylesheet" href="css/Unidad3.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav>
+        <div class="logo">
+        <a href="https://www.itson.mx" target="_blank" class="logo">
+            
+                <img src="img/itsonLogo.png" alt="Logo ITSON">
+                 </a>  
+                 Ingeniería en Software
+            </div>
+             
+        <ul class="nav-links">
+            <li><a href="index.html" >Inicio</a></li>
+            <li><a href="Unidad1.html" >Introducción</a></li>
+            <li><a href="Unidad2.html" >Ciclo de Vida</a></li>
+            <li><a href="Unidad3.html" class="active">Corrientes y Modelos de Desarrollo</a></li>
+            <li><a href="VideoJuegos.html">Videojuegos</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Sección de contenido principal -->
+    <main>
+        <!-- Hero con fondo animado -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Corrientes y Modelos de Desarrollo</h1>
+                <p>Principales Corrientes Y modelos de Desarrollo De Software</p>
+            </div>
+            <canvas id="backgroundCanvas"></canvas>
+        </section>
+
+        <!-- Sección de contenido con tarjetas -->
+        <section class="content">
+            <div class="interactive-section">
+                <h2>Explora La Principales Corrientes Y Modelos De Software</h2>
+                <div class="card-container">
+                    <!-- Tarjetas con modales -->
+                    <div class="card" data-content="concepto">
+                        <div class="card-front">
+                            <h3>Principales Corrientes En el Desarrollo De Software</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Aqui podras ver las principales corrientes de  desarrollo de software...</p>
+                            <button class="btn-more" data-modal="conceptoModal">Leer más</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="disciplina">
+                        <div class="card-front">
+                            <h3>Modelos De Desarrollo De Software</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Aqui encontraras los principales modelos de software y sus caracteristicas</p>
+                            <button class="btn-more" data-modal="disciplinaModal">Leer más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales -->
+     <!--CORRIENTES EN EL DESARROLLO DE SOFTWARE / METODOLOGIAS-->
+    <div id="conceptoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h1>Principales Corrientes En El Desarrollo de Software</h1>
+            <p>La ingeniería de software es una disciplina que integra métodos, herramientas y técnicas para desarrollar software de calidad. A través de ella, se diseñan, construyen, prueban y mantienen sistemas complejos que cumplen funciones específicas.</p>
+            <p>La importancia de la ingeniería de software reside en su capacidad de crear soluciones confiables, seguras y eficientes, que son esenciales en áreas como la medicina, finanzas y tecnología. Sin este enfoque, el desarrollo de software carecería de rigor y previsibilidad, lo que impactaría la calidad.</p>
+            <p class="reference">Fuente: <a href="https://definicion.de/ingenieria-de-software/" target="_blank">Definición.de - Ingeniería de Software</a></p>
+            <div class="gallery-item">
+                <img src="img/imagenUnidad1.jpg" alt="Imagen ITSON 6">
+                <div class="gallery-caption">ITSON</div>
+            </div>
+    
+            <!-- Información detallada sobre los diferentes métodos de desarrollo de software -->
+            <h3>Desarrollo en Cascada (Waterfall)</h3>
+            <p><strong>Características:</strong> Modelo lineal secuencial en el que cada fase del desarrollo (requisitos, diseño, implementación, pruebas, despliegue) se completa antes de pasar a la siguiente.</p>
+            <p><strong>Ventajas:</strong> Estructura clara, fácil de gestionar y documentar.</p>
+            <p><strong>Desventajas:</strong> Rigidez, dificultad para adaptarse a cambios y retroalimentación tardía del cliente.</p>
+            <p class="reference">Fuente: Pressman, R. S. (2010). Ingeniería de software: un enfoque práctico. McGraw-Hill.</p>
+    
+            <h3>Desarrollo Ágil</h3>
+            <p><strong>Características:</strong> Enfoque iterativo e incremental que prioriza la satisfacción del cliente, la adaptabilidad a los cambios y la colaboración entre equipos.</p>
+            <p><strong>Ventajas:</strong> Flexibilidad, rápida entrega de valor, mayor satisfacción del cliente.</p>
+            <p><strong>Desventajas:</strong> Requiere alta colaboración y compromiso del equipo, puede ser difícil de gestionar en grandes proyectos.</p>
+            <p class="reference">Fuentes: Beck, K. (2000). Extreme Programming Explained: Embrace Change. Addison-Wesley. Schwaber, K., & Beedle, M. (2001). Agile Software Development with Scrum. Prentice Hall.</p>
+    
+            <h3>Desarrollo Basado en Modelado (MDD)</h3>
+            <p><strong>Características:</strong> Utiliza modelos abstractos para representar el sistema y generar automáticamente parte del código.</p>
+            <p><strong>Ventajas:</strong> Mayor productividad, menor margen de error, facilita la reutilización de componentes.</p>
+            <p><strong>Desventajas:</strong> Requiere herramientas especializadas y una sólida comprensión de los lenguajes de modelado.</p>
+            <p class="reference">Fuente: France, R. B., & Rumpe, B. (2007). Model-Driven Development of Software Systems. Springer.</p>
+    
+            <h3>Desarrollo Dirigido por Pruebas (TDD)</h3>
+            <p><strong>Características:</strong> Los casos de prueba se escriben antes de implementar el código, guiando el desarrollo y asegurando la calidad.</p>
+            <p><strong>Ventajas:</strong> Mejora la calidad del código, reduce la cantidad de errores, facilita la refactorización.</p>
+            <p><strong>Desventajas:</strong> Requiere una curva de aprendizaje, puede aumentar el tiempo de desarrollo inicial.</p>
+            <p class="reference">Fuente: Beck, K. (2003). Test-Driven Development by Example. Addison-Wesley.</p>
+    
+            <h3>Desarrollo DevOps</h3>
+            <p><strong>Características:</strong> Combina desarrollo y operaciones, promoviendo la colaboración y automatización para acelerar la entrega de software.</p>
+            <p><strong>Ventajas:</strong> Mayor frecuencia de despliegue, mejora la fiabilidad y la escalabilidad.</p>
+            <p><strong>Desventajas:</strong> Requiere una cultura organizacional de colaboración y cambio.</p>
+            <p class="reference">Fuente: Humble, M., & Farley, J. (2010). Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation. Addison-Wesley.</p>
+    
+            <h3>Desarrollo Low-Code/No-Code</h3>
+            <p><strong>Características:</strong> Permite crear aplicaciones con poca o ninguna programación, utilizando interfaces visuales y configuraciones predefinidas.</p>
+            <p><strong>Ventajas:</strong> Acelera el desarrollo, reduce la necesidad de programadores especializados, democratiza el desarrollo de software.</p>
+            <p><strong>Desventajas:</strong> Puede limitar la flexibilidad y personalización, no es adecuado para todos los tipos de aplicaciones.</p>
+            <p class="reference">Fuente: Forrester Research (informes y estudios sobre el mercado de low-code/no-code).</p>
+    
+            <h3>Otras Corrientes y Consideraciones</h3>
+            <p><strong>Desarrollo de Software Libre:</strong> Promueve el software de código abierto y la colaboración.</p>
+            <p><strong>Desarrollo Ágil a Escala:</strong> Adapta los principios ágiles a grandes equipos y organizaciones.</p>
+            <p><strong>Desarrollo Centrado en el Usuario:</strong> Prioriza las necesidades y experiencias del usuario final.</p>
+            <p><strong>Desarrollo Seguro:</strong> Incorpora prácticas de seguridad en todas las fases del desarrollo.</p>
+    
+            <h3>Factores a Considerar al Elegir una Corriente</h3>
+            <p><strong>Tamaño y complejidad del proyecto:</strong> Proyectos pequeños pueden beneficiarse de enfoques ágiles, mientras que proyectos grandes pueden requerir una combinación de metodologías.</p>
+            <p><strong>Equipo de desarrollo:</strong> Las habilidades y experiencia del equipo influirán en la elección de la metodología.</p>
+            <p><strong>Requisitos del cliente:</strong> La necesidad de flexibilidad, rapidez de entrega y calidad determinarán la mejor opción.</p>
+            <p><strong>Entorno tecnológico:</strong> La infraestructura y las herramientas disponibles también influyen en la elección.</p>
+    
+            <h3>Fuentes Adicionales</h3>
+            <p><strong>Libros:</strong> Pressman, R. S. (2010). Ingeniería de software: un enfoque práctico. McGraw-Hill. Sommerville, I. (2016). Ingeniería de software. Pearson Educación.</p>
+            <p><strong>Artículos científicos:</strong> IEEE Software, ACM Transactions on Software Engineering and Methodology.</p>
+            <p><strong>Blogs y sitios web especializados:</strong> Martin Fowler, ThoughtWorks, Atlassian.</p>
+        </div>
+    </div>
+    
+
+    <div id="disciplinaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Disciplina en el Campo de la Computación</h2>
+            <p>La ingeniería de software combina principios de la informática, matemáticas y ciencias de la ingeniería. Su objetivo principal es el desarrollo de sistemas fiables y robustos.</p>
+            <p>En el campo de la computación, esta disciplina permite la creación de aplicaciones que van desde simples sistemas de gestión hasta soluciones de inteligencia artificial. La planificación y el análisis detallado de cada componente son fundamentales para el éxito del proyecto.</p>
+            <p class="reference">Fuente: <a href="https://cultura-informatica.com/que-es-la-ingenieria-de-software/" target="_blank">Cultura Informática - ¿Qué es la Ingeniería de Software?</a></p>
+            <div class="gallery-item">
+                <img src="img/ImagenUnidad2.jpg" alt="Imagen ITSON 6">
+                <div class="gallery-caption">ITSON</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/unidad3.js"></script>
+</body>
+</html>

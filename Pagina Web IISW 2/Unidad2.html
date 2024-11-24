@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Introducción - Ingeniería en Software</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlaces a hojas de estilo y fuentes -->
+    <link rel="stylesheet" href="css/Unidad2.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav>
+        <div class="logo">
+        <a href="https://www.itson.mx" target="_blank" class="logo">
+            
+                <img src="img/itsonLogo.png" alt="Logo ITSON">
+                 </a>  
+                 Ingeniería en Software
+            </div>
+             
+        <ul class="nav-links">
+            <li><a href="index.html" >Inicio</a></li>
+            <li><a href="Unidad1.html" >Introducción</a></li>
+            <li><a href="Unidad2.html" class="active">Ciclo de Vida</a></li>
+            <li><a href="Unidad3.html">Corrientes y Modelos de Desarrollo</a></li>
+            <li><a href="VideoJuegos.html">Videojuegos</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Sección de contenido principal -->
+    <main>
+        <!-- Hero con fondo animado -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Ciclo de Vida</h1>
+                <p>El Ciclo De Vida Del Desarrollo De Software</p>
+            </div>
+            <canvas id="backgroundCanvas"></canvas>
+        </section>
+
+        <!-- Sección de contenido con tarjetas -->
+        <section class="content">
+            <div class="interactive-section">
+                <h2>Explora los Conceptos Clave</h2>
+                <div class="card-container">
+                    <!-- Tarjetas con modales -->
+                    <div class="card" data-content="concepto">
+                        <div class="card-front">
+                            <h3>Etapas Del Ciclo De Vida</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>La ingeniería de software es una disciplina...</p>
+                            <button class="btn-more" data-modal="cicloModal">Leer más</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="disciplina">
+                        <div class="card-front">
+                            <h3>Roles Del Modelo De Desarrollo</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Aplica principios y técnicas de la informática...</p>
+                            <button class="btn-more" data-modal="RetosModal">Leer más</button>
+                        </div>
+                    </div>
+                    <div class="card" data-content="tendencias">
+                        <div class="card-front">
+                            <h3>Restos actuales</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Descubre las tendencias más relevantes...</p>
+                            <button class="btn-more" data-modal="disciplinaModal">Explorar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modales -->
+    <!--ETAPAS DEL CICLO DE VIDA-->
+    <div id="cicloModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Etapas del ciclo de vida del Software</h2>
+            <p>El desarrollo de software debe pasar por diferentes etapas para su exitoso lanzamiento y funcionamiento. Estas etapas, conocidas como el ciclo de vida del software, incluyen desde la planificación y el diseño hasta la implementación, pruebas y mantenimiento. Cada fase tiene su propio propósito y contribuye a crear una aplicación robusta y confiable.</p>
+            
+            <ul>
+                <li>
+                Planificación: En esta primera fase, se planea el proyecto y sus puntos más importantes, tales como: los objetivos y requisitos, así como también los costos y recursos necesarios, la programación y asignaciones correspondientes. (INESDI, 2023; AWS, s.f.)
+                </li>
+                <li>
+                Análisis de requerimientos: Después, se analizan detalladamente cada uno de los requerimientos, además de identificar posibles problemas o inconvenientes que se tengan que tomar en cuenta. (INESDI, 2023)
+                </li>
+                <li>
+                Diseño: Se diseñan y crean los diagramas y modelos necesarios para el software, además de la arquitectura del mismo. (INESDI, 2023)
+                </li>
+                <li>
+                Implementación: Esta es la etapa de desarrollo de software, siguiendo los pasos anteriormente descritos. (INESDI, 2023)
+                </li>
+                <li>
+                Pruebas: Para confirmar que el software no presenta errores, se realizan pruebas propuestas por los desarrolladores, que pueden ser automáticas y/o manuales. Esto para comprobar si tiene errores y además cumple con los requerimientos del cliente. (AWS, s.f.)
+                </li>
+                <li>
+                Despliegue: Finalmente se instala el software y es configurado para su uso adecuado. (INESDI, 2023)
+                </li>
+                <li>
+                Mantenimiento: Después de ser instalado, los desarrolladores deben comprobar que el software sigue funcionando y además cumple con las expectativas del cliente. Igualmente, realiza actualizaciones cuando sea necesario. (INESDI, 2023)
+                </li>
+            </ul>
+
+            <p class="reference">Fuentes: 
+                <a href="https://www.inesdi.com/blog/ciclo-de-vida-del-software/">Ciclo de vida del software: qué es, etapas y Modelos</a> | 
+                <a href="https://aws.amazon.com/es/what-is/sdlc/">¿Qué es el SDLC? - Explicación del ciclo de vida del desarrollo de software - AWS</a> | 
+            </p>
+        </div>
+    </div>
+
+    <!--ROLES EN EL DESARROLLO DE SW-->
+    <div id="RolesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Roles en el desarrollo de software</h2>
+            <p>El desarrollo de software exige diversas habiliodades, por esta razón se crea un equipo de desarrollo en donde cada integrante mantiene un rol diferente:</p>
+            <ul>
+             <li>
+             Analista de requisitos: Esencial para entender las necesidades del cliente y traducirlas en especificaciones claras que guíen todo el proceso de desarrollo. 
+             </li> 
+             <li>
+             Arquitecto de Software: Responsable de diseñar la estructura y la arquitectura del software, asegurando que el sistema sea escalable, eficiente y fácil de mantener.
+             </li> 
+             <li>
+             Programador: Encargado de escribir el código del software, implementando las funcionalidades y asegurando que el sistema funcione según lo esperado.
+             </li> 
+             <li>
+             Tester: Fundamental para garantizar la calidad del software mediante pruebas rigurosas que detecten errores y aseguren que el producto cumpla con los requisitos.
+             </li>  
+             <li>
+             Project Manager: Responsable de la gestión del proyecto, asegurando que se cumplan los plazos, el presupuesto y los objetivos del cliente y coordinando el trabajo en equipo.
+             </li>  
+             <li>
+             Scrum Master (en metodologias agiles): Facilita el trabajo en equipo ágil, ayudando a eliminar obstáculos y garantizando que el equipo siga las mejores prácticas de Scrum para alcanzar los objetivos rápidamente.
+             </li>   
+            </ul>
+            <p>Estos roles son claves para el exito de cualquier proyecto de software, ya que aseguran que se sigan las mejores prácticas, se cumplan los requisitos y el producto final sea de alta calidad. </p>
+    
+            <p class="reference">Fuentes: 
+                <a href="Roles Fundamentales en un Equipo de Desarrollo de Software - COR">Roles Fundamentales en un equipo de Desarrollo de Software</a>
+            </p>
+        </div>
+    </div>
+       
+
+    <!--RETOS ACTUALES EN EL DESARROLLO DE SW-->
+    <div id="RetosModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Retos actuales en el desarrollo de software</h2>
+            <p>El mundo del desarrollo del software se encuentra en constante estado de evolucion, cada año surgen nuevas tecnologias y metodologias creando retos para los desarrolladores de software, entre ellos:</p>
+            <ul>
+                <li> 
+                aptacion a nuevas tecnologias: Los desarrolladores deben mantenerse al dia con tecnologias emergentes como IA, blockchain y IoT para integrarlas eficazmente en los proyectos.
+                </li>
+                <li>
+                Seguridad y Privacidad: Asegurar la proteccion de datos y cumplir con normativas de privacidad, como GDPR, frente a crecientes amenazas ciberneticas.
+                </li>
+                <li>
+                Escalabilidad y rendimiento: Diseñar sistemas que manejen el aumento de usuarios y datos sin comprometer el rendimiento, garantizando tiempos de respuesta rapidos.
+                </li>
+                <li>
+                Desarrollo agil y equipos distribuidos: Implementar metodologias agiles efectivas y gestionar equipos distribuidos geograficamente, manteniendo una buena comunicacion y coordinacion.
+                </li>
+                <li>
+                Pruebas y calidad del software: Mantener altos estándares de calidad a través de pruebas automatizadas y garantizar que el software este libre de errores. 
+                </li>
+                <li>
+                Cumplimiento de regulacion y normativas: Asegurar que el software cumpla con normativas legales y estandares internacionales de calidad y seguridad.
+            </ul>
+            <p>Los retos actuales en el desarrollo de software son diversos, la clave para enfrentarlos radica en la adopcion de nuevas tecnologias, la mejora continua de procesos y la colaboracion efectiva entre equipos multidisciplinarios. </p>
+            <h2>Fuente:</h2>
+            <ul>
+              <li><a class="reference" href="https://appix.mx/desarrollo-de-software-10-principales-reto/"></a>Desarrollo de software: 10 principales retos</li>  
+            </ul>
+        </div>
+     </div>
+
+
+    <div id="disciplinaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Disciplina en el Campo de la Computación</h2>
+            <p>La ingeniería de software combina principios de la informática, matemáticas y ciencias de la ingeniería. Su objetivo principal es el desarrollo de sistemas fiables y robustos.</p>
+            <p>En el campo de la computación, esta disciplina permite la creación de aplicaciones que van desde simples sistemas de gestión hasta soluciones de inteligencia artificial. La planificación y el análisis detallado de cada componente son fundamentales para el éxito del proyecto.</p>
+            <p class="reference">Fuente: <a href="https://cultura-informatica.com/que-es-la-ingenieria-de-software/" target="_blank">Cultura Informática - ¿Qué es la Ingeniería de Software?</a></p>
+            <div class="gallery-item">
+                <img src="img/ImagenUnidad2.jpg" alt="Imagen ITSON 6">
+                <div class="gallery-caption">ITSON</div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Scripts -->
+    <script src="js/unidad3.js"></script>
+</body>
+</html>

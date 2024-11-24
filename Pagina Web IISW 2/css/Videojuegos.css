@@ -1,0 +1,205 @@
+  /* Estilos globales */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Sección de Videojuegos */
+.videojuegos {
+    padding: 60px;
+    background-color: #121212;
+    text-align: center;
+}
+
+.videojuegos h2 {
+    font-size: 2.5rem;
+    color: #00adb5;
+    margin-bottom: 40px;
+    animation: glow 3s ease-in-out infinite;
+}
+
+/* Contenedor de las tarjetas */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos de la tarjeta */
+.card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5),
+                0 0 20px rgba(138, 43, 226, 0.5), 
+                0 0 40px rgba(0, 191, 255, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(138, 43, 226, 0.6), 
+                0 0 60px rgba(0, 191, 255, 0.5);
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00adb5;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    margin: 10px 0;
+}
+
+.game-button {
+    background-color: transparent;
+    border: 2px solid #00adb5;
+    color: #00adb5;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.game-button:hover {
+    background-color: #00adb5;
+    color: #1a1a1a;
+}
+
+/* Animación de Destello para el Título */
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 10px rgba(138, 43, 226, 0.7), 
+                     0 0 20px rgba(138, 43, 226, 0.6), 
+                     0 0 30px rgba(0, 191, 255, 0.5);
+    }
+    50% {
+        color: #00adb5;
+        text-shadow: 0 0 20px rgba(138, 43, 226, 0.8), 
+                     0 0 40px rgba(0, 191, 255, 0.7), 
+                     0 0 60px rgba(138, 43, 226, 0.6);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+canvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Menú de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(13, 13, 13, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 1000;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00adb5;
+    cursor: pointer;
+}
+
+nav .logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-links li {
+    margin: 0 20px;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+}
+
+nav .nav-links a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #00adb5;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav .nav-links a:hover::after,
+nav .nav-links a.active::after {
+    width: 100%;
+}
+
+nav .burger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopa de Letras - Ingeniería en Software</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Fuente personalizada -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/SopaDeLetras.css">
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <div class="logo">
+            <a href="https://www.itson.mx" target="_blank" class="logo">
+                <img src="img/itsonLogo.png" alt="Logo ITSON">
+            </a>  
+            Ingeniería en Software
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" >Inicio</a></li>
+            <li><a href="Unidad1.html">Introducción</a></li>
+            <li><a href="Unidad2.html">Ciclo de Vida</a></li>
+            <li><a href="Unidad3.html">Corrientes y Modelos de Desarrollo</a></li>
+            <li><a href="VideoJuegos.html" class="active">Videojuegos</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <canvas id="backgroundCanvas"></canvas>
+
+    <div class="cuadrito">
+        <h1>Sopa de Letras - Ingeniería en Software</h1>
+
+        <div class="game-container">
+            <div class="word-search" id="word-search">
+                <!-- Cuadrícula -->
+            </div>
+
+            <div class="word-list">
+                <h2>Palabras por encontrar</h2>
+                <div class="word" id="AGILIDAD">AGILIDAD</div>
+                <div class="word" id="CODIGO">CODIGO</div>
+                <div class="word" id="ALGORITMO">ALGORITMO</div>
+                <div class="word" id="TESTEO">TESTEO</div>
+                <div class="word" id="API">API</div>
+                <div class="word" id="SCRUM">SCRUM</div>
+                <div class="word" id="BACKEND">BACKEND</div>
+                <div class="word" id="FRONTEND">FRONTEND</div>
+                <div class="word" id="DATOS">DATOS</div>
+                <div class="word" id="FUNCION">FUNCION</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/SopaDeLetras.js"></script>
+</body>
+</html>
